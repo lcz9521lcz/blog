@@ -6,10 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>首页</title>
+    <!-- 引入bootstrap框架的css文件 -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 引入jq文件 -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- 引入bootstrap框架的js文件(依赖jq文件) -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <h1>这是ejs渲染的博客首页</h1>
+    <!-- 导航模块 -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">个人博客</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- 注册登录按钮 -->
+                <div class="nav navbar-nav navbar-right navbar-form">
+                    <button class="btn btn-success">注册</button>
+                    <button class="btn btn-primary">登录</button>
+                </div>
+                <!-- 欢迎注销按钮 -->
+                <div class="nav navbar-nav navbar-right navbar-form">
+                    <button class="btn btn-warning">欢迎<strong>XXX</strong></button>
+                    <button class="btn btn-danger">注销</button>
+                </div>
+                <!-- 下拉框 -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">发表 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">文章</a></li>
+                            <li><a href="#">问题</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- 搜索框 -->
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入要搜索的内容...">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- 底部---版权模块 -->
+    <div class="text-center text-muted">
+        我的github首页 © <a href="https://github.com/lcz9521lcz" target="_blank">https://github.com/lcz9521lcz</a>
+    </div>
 </body>
 
 </html>
