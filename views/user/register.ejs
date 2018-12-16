@@ -47,22 +47,22 @@
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script>
     $(function () {
-      $('#form').on('submit', function (e) {
-        // 取消表单的默认提交事件
-        e.preventDefault()
-        // 当取消了表单的默认提交行为之后，手动发起Ajax请求，提交表单
+      //获取表单元素注册submit事件
+      $('#form').on('submit', () => {
+        // console.log('hello')
+        // e.preventDefault()//下面的代码可以执行---事件源参数e的方法也是阻止表单的默认提交
+        //异步请求接口
+        // console.log($('#form').serialize())//username=tom&password=1&nickname=111
         $.ajax({
           url: '/register',
+          type: 'post',
           data: $('#form').serialize(),
-          type: 'POST',
-          dataType: 'json',
-          success: function (result) {
-            if (result.status !== 200) {
-              return alert(result.msg)
-            }
-            location.href = '/login'
+          success(res) {
+            console.log(res)
           }
         })
+        //取消表单的默认跳转---取消表单的默认提交行为
+        return false//下面的代码将不再执行
       })
     })
   </script>
