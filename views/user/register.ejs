@@ -58,7 +58,9 @@
           type: 'post',
           data: $('#form').serialize(),
           success(res) {
-            console.log(res)
+            // console.log(res)//{ status: 200, msg: '注册成功' }
+            if (res.status !== 200) return alert(res.msg)
+            location.href = 'login'
           }
         })
         //取消表单的默认跳转---取消表单的默认提交行为
