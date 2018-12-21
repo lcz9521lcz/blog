@@ -5,8 +5,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const fs = require('fs')
 const path = require('path')
+const session = require('express-session')
 //创建服务器对象
 const app = express()
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+}))
 
 //配置指定模板引擎
 app.set('view engine', 'ejs')

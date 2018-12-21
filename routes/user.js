@@ -7,4 +7,5 @@ router.get('/register', ctrl.getRegisterHandler)
 router.get('/login', ctrl.getLoginHandler)
 router.post('/register', ctrl.postRegisterHandler)
 router.post('/login', ctrl.postLoginHandler)
+router.get('/logout', ctrl.getLogoutHandler)
 module.exports = router 

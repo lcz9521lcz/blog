@@ -55,7 +55,16 @@ module.exports = {
             // console.log(result)//用户对象信息
             if (result.length !== 1) return res.send({ msg: '用户不存在', status: 500 })
             //如果以上二个条件都满足
+            // console.log(req.session)
+            req.session.user = result[0]
+            req.session.isLogin = true
+            // console.log(req.session)
             res.send({ msg: '登录成功', status: 200 })
+        })
+    },
+    getLogoutHandler(req, res) {
+        req.session.destroy((err) => {
+            res.redirect('/')
         })
     }
 }
